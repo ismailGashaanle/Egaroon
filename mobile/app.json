@@ -1,0 +1,91 @@
+{
+  "expo": {
+    "name": "E-Garoon",
+    "slug": "kulansiiye-mobile",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "kulansiiye",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#1A237E"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSCameraUsageDescription": "Scan booking QR codes at the gate.",
+        "NSLocationWhenInUseUsageDescription": "Find nearby stadiums and set GPS for stadium setup.",
+        "NSPhotoLibraryUsageDescription": "Upload stadium and field cover images.",
+        "NSPhotoLibraryAddUsageDescription": "Save Match Pass card images for stadium entry.",
+        "UIBackgroundModes": ["remote-notification"]
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#1A237E",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "permissions": [
+        "CAMERA",
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION",
+        "READ_MEDIA_IMAGES",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "POST_NOTIFICATIONS",
+        "VIBRATE",
+        "RECEIVE_BOOT_COMPLETED",
+        "SCHEDULE_EXACT_ALARM"
+      ],
+      "softwareKeyboardLayoutMode": "resize"
+    },
+    "androidNavigationBar": {
+      "backgroundColor": "#ffffff",
+      "barStyle": "dark-content"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-secure-store",
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "Find nearby stadiums for booking."
+        }
+      ],
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Scan booking QR codes at the gate."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Upload stadium and field cover images."
+        }
+      ],
+      "expo-audio",
+      [
+        "expo-media-library",
+        {
+          "photosPermission": "Save Match Pass cards to your gallery for stadium entry.",
+          "savePhotosPermission": "Allow E-Garoon to save Match Pass images.",
+          "isAccessMediaLocationEnabled": false
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "sounds": [],
+          "enableBackgroundRemoteNotifications": false
+        }
+      ]
+    ]
+  }
+}

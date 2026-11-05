@@ -1,0 +1,31 @@
+---
+description: E-GAROON project conventions — read /docs before coding
+alwaysApply: true
+---
+
+# E-GAROON
+
+Before implementing features, read the project documentation in `/docs`.
+
+Start with:
+- [docs/01-project-overview.md](../docs/01-project-overview.md)
+- [docs/MASTER-AI-PROMPT.md](../docs/MASTER-AI-PROMPT.md)
+- [docs/17-development-plan.md](../docs/17-development-plan.md)
+
+## Rules
+
+- **JavaScript only** — no TypeScript.
+- **Backend is source of truth** for auth, pricing, payment status, and booking state.
+- Never trust client payment status, prices, or roles.
+- Business logic belongs in **services**, not controllers.
+- Payment providers via **adapter pattern** (WaafiPay, DahabPay).
+- Build **phase by phase** per `docs/17-development-plan.md` — do not implement the entire app at once.
+- Do not invent APIs, fields, or business rules that conflict with `/docs`.
+
+## Current MVP notes
+
+- API base: `/api` (spec target: `/api/v1`).
+- Payments: mock provider in dev; real providers planned.
+- Client uses `react-hot-toast` and `react-icons/fi` (spec mentions Sonner/Lucide).
+
+See [docs/13-folder-architecture.md](../docs/13-folder-architecture.md) for full drift table.
